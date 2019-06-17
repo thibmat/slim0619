@@ -1,0 +1,11 @@
+{
+    "name": "thibault/slim0619",
+    "description": "Projet Php pour tester le framework slim en version 3",
+    "authors": [
+        {
+            "name": "thibault",
+            "email": "t.verhaeghe@free.fr"
+        }
+    ],
+    "require": {}
+}
