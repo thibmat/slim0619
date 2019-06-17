@@ -7,5 +7,7 @@
             "email": "t.verhaeghe@free.fr"
         }
     ],
-    "require": {}
+    "require": {
+        "slim/slim": "^3.12"
+    }
 }
