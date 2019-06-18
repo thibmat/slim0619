@@ -1,19 +1,33 @@
 <?php
 namespace App\Controller;
 
+use App\Utilities\AbstractController;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Http\Response;
 
-class ProductController
+
+class ProductController extends AbstractController
 {
     public function liste (ServerRequestInterface $request, Response $response)
     {
-        $response = $response->getBody()->write('<h1>Liste des produits</h1>');
-        return $response;
+        return $this->twig->render($response,'Produit/list.twig');
     }
     public function show (ServerRequestInterface $request, Response $response, array $args)
     {
-        $response = $response->getBody()->write("<h1>Detail du produit : {$args['id']}</h1>");
-        return $response;
+        return $this->twig->render($response,'Produit/show.twig', [
+            "id" => $args['id']
+        ]);
+    }
+    public function modif (ServerRequestInterface $request, Response $response, array $args)
+    {
+         return $this->twig->render($response,'Produit/modif.twig', [
+             "id" => $args['id']
+         ]);
+    }
+    public function delete (ServerRequestInterface $request, Response $response, array $args)
+    {
+        return $this->twig->render($response,'Produit/delete.twig', [
+            "id" => $args['id']
+        ]);
     }
 }

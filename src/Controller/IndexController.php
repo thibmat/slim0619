@@ -1,17 +1,15 @@
 <?php
 namespace App\Controller;
 
-
+use App\Utilities\AbstractController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class IndexController
+class IndexController extends AbstractController
 {
+
     public function index (ServerRequestInterface $request, ResponseInterface $response)
     {
-        $response = $response->getBody()->write('<h1>Bonjour</h1>');
-        return $response;
+        return $this->twig->render($response,'index.twig');
     }
-
-
 }

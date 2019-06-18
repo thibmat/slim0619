@@ -1,14 +1,16 @@
 <?php
 namespace App\Controller;
 
-
+use App\Utilities\AbstractController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Http\Response;
 
 
+
 class JsonController
 {
+
     public function Json(ServerRequestInterface $request, Response $response)
     {
         $hamac = [
