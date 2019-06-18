@@ -1,7 +1,9 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Produit;
 use App\Utilities\AbstractController;
+use App\Utilities\Database;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Http\Response;
 
@@ -10,7 +12,12 @@ class ProductController extends AbstractController
 {
     public function liste (ServerRequestInterface $request, Response $response)
     {
-        return $this->twig->render($response,'Produit/list.twig');
+        $database = new Database();
+        $query = "SELECT * FROM produit WHERE etat_publication = 1";
+        $products = $database->query($query, Produit::class);
+        return $this->twig->render($response,'Produit/list.twig', [
+            'products' => $products
+        ]);
     }
     public function show (ServerRequestInterface $request, Response $response, array $args)
     {

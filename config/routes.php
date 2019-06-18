@@ -24,3 +24,5 @@ $app->group('/produit', function (){
 //Creation d'une route de connexion
 $app->get('/inscription', AuthController::class . ':register');
 $app->get('/connection', AuthController::class . ':connect');
+
+
