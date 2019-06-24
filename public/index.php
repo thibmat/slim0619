@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+
 //Récupération de l'autoloader créé par Slim
 require dirname(__DIR__) . '/vendor/autoload.php';
 //Les Uses des différentes classes

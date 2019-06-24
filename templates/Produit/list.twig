@@ -9,13 +9,12 @@
         </figure>
         <div class="card-body">
             <h5 class="card-title w-100 text-center">{{ product.name }} - {{ product.price }}€</h5>
-            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">{{ product.description | resume }}</p>
             <a href="#" class="btn btn-dark btn-block">Acheter!</a>
         </div>
     </div>
-
 {% endfor %}
-</div></main>
 
+</div></main>
 
 {% endblock %}

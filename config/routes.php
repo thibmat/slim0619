@@ -21,8 +21,11 @@ $app->group('/produit', function (){
     // Création d'une route de suppession de produit
     $this->get('/delete/{id:\d+}', ProductController::class . ':delete');
 });
-//Creation d'une route de connexion
-$app->get('/inscription', AuthController::class . ':register');
-$app->get('/connection', AuthController::class . ':connect');
+$app->group('/users', function (){
+    //Création d'une route possédant une variable
+    $this->get('/liste', AuthController::class . ':liste' );
+    $this->any('/login', AuthController::class . ':login' );
+});
+
 
 

@@ -1,4 +1,8 @@
 {% extends 'base.twig' %}
 
 {% block title %}Suppression d'un produit : {{ id }}{% endblock %}
-{% block body %}<h1>Suppression d'un produit : {{ id }}</h1>{% endblock %}
+{% block body %}
+{% if status == 1 %}
+    <h1>La suppression du produit {{ id }} a bien été effectuée</h1>
+{% endif %}
+{% endblock %}

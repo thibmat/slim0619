@@ -14,25 +14,14 @@ class  Produit {
 
     /**
      * Produit constructor.
-
      * @param $name
      * @param $description
 
      */
-    public function __construct( ?string $name = '', ?string $description = '')
+    public function __construct( ?string $name = null, ?string $description = null)
     {
         $this->name = $name;
         $this->description = $description;
-    }
-
-    /**
-     * Retourne les 50 premiers caractères de la description
-     * @return string
-     */
-    public function getShortDescription():string
-    {
-
-        return substr($this->description, 0,50)."...";
     }
 
     /**
